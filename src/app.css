@@ -5,11 +5,11 @@ body {
 .comment {
     color: blue;
     position: absolute;
-    top: 100px;
+/*    top: 100px;*/
     left: 800px;
-    transition-property: transform;
+/*    transition-property: transform;
     transition-duration: 14s;
-    transform: translateX(-3000px);
+    transform: translateX(-3000px);*/
 }
 
 .comment:hover {
