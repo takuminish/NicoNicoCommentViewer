@@ -8,7 +8,7 @@ class CommentManage {
     }
 
     commentAliveCheck() {
-        this.comments.forEach( function( c, i, comments) {
+        this.comments.forEach( ( c, i, comments) =>  {
             if (c.is_alive === false) {
 		comments.splice(i, 1);
 	    }
@@ -32,7 +32,7 @@ class Comment {
     }
 
     Move() {
-	setInterval( () => {
+	this.moveTime = setInterval( () => {
 	    this.element.style.left = `${this.dx}px`;
 	    this.dx -= 1;
 	    if ((this.width * -1) > this.dx) {
@@ -44,17 +44,17 @@ class Comment {
     }
 }
 
-window.onload = function() {
+window.onload = () => {
     let commentManage = new CommentManage();
     
-    document.getElementById("button1").onclick = function() {commentMove(commentCreate("comment1"));}
-    document.getElementById("button2").onclick = function() {
+    document.getElementById("button1").onclick = () => {commentMove(commentCreate("comment1"));}
+    document.getElementById("button2").onclick = () => {
 	let comment2 = new Comment("comment2");
 	commentManage.commentAdd(comment2);
 	comment2.viewFromBody();
 	comment2.Move();
     }
-    document.getElementById("button3").onclick = function() {commentManage.commentAliveCheck();}
+    document.getElementById("button3").onclick = () => {commentManage.commentAliveCheck();}
      
 }
 
