@@ -49,9 +49,8 @@ window.onload = () => {
     setInterval( () => {
         commentArray.commentAliveCheck();
     },5000);
-    
-    document.getElementById("button1").onclick = () => {commentMove(commentCreate("comment1"));}
-    document.getElementById("button2").onclick = () => {
+
+    document.getElementById("コメント生成").onclick = () => {
 	let comment2 = new Comment("comment2","testだよ");
 	commentArray.commentAdd(comment2);
 	comment2.viewFromBody();
