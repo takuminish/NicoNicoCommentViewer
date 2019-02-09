@@ -17,10 +17,10 @@ class CommentArray {
 }
 
 class Comment {
-    constructor(text) {
+    constructor(id,text) {
 	this.element = document.createElement("h1");
 	this.element.textContent = text;
-        this.element.setAttribute("id","sdfg");
+        this.element.setAttribute("id",id);
         this.element.setAttribute("class","comment");
 	this.is_alive = true;
     }
@@ -52,7 +52,7 @@ window.onload = () => {
     
     document.getElementById("button1").onclick = () => {commentMove(commentCreate("comment1"));}
     document.getElementById("button2").onclick = () => {
-	let comment2 = new Comment("comment2");
+	let comment2 = new Comment("comment2","testだよ");
 	commentArray.commentAdd(comment2);
 	comment2.viewFromBody();
 	comment2.Move();
