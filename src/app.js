@@ -8,9 +8,9 @@ window.onload = function() {
 
 function commentMove(comment) {
     let dx = comment.offsetLeft;
-    let x = comment.offsetWidth;
+    const x = comment.offsetWidth;
 
-    let time = setInterval( function() {
+    const time = setInterval( function() {
 	comment.style.left = dx + "px";
 	dx -= 1;
 	if ((x * -1) > dx) {
@@ -21,7 +21,7 @@ function commentMove(comment) {
 }
 
 function commentCreate(text) {
-    let comment = document.createElement("h1");
+    const comment = document.createElement("h1");
     comment.textContent = text;
     comment.setAttribute("id",text);
     comment.setAttribute("class","comment");
@@ -29,5 +29,4 @@ function commentCreate(text) {
     document.body.appendChild(comment);
     return comment;
 }
-
 
