@@ -1,32 +1,33 @@
-
 class Comment {
     constructor(text) {
-	this.a = document.createElement("h1");
-	this.a.textContent = text;
-        this.a.setAttribute("id","sdfg");
-        this.a.setAttribute("class","comment");
+	this.element = document.createElement("h1");
+	this.element.textContent = text;
+        this.element.setAttribute("id","sdfg");
+        this.element.setAttribute("class","comment");
+	this.is_alive = true;
     }
 
     viewFromBody() {
-        document.body.appendChild(this.a);
-	this.dx = this.a.offsetLeft;
-        this.width = this.a.offsetWidth;
+        document.body.appendChild(this.element);
+	this.dx = this.element.offsetLeft;
+        this.width = this.element.offsetWidth;
     }
 
     Move() {
-	let self = this
 	this.moveTime = setInterval( function() {
-	    self.a.style.left = `${self.dx}px`;
-	    self.dx -= 1;
-	    if ((self.width * -1) > self.dx) {
+	    this.element.style.left = `${this.dx}px`;
+	    this.dx -= 1;
+	    if ((this.width * -1) > this.dx) {
 		clearInterval(this.moveTime);
+		this.element.parentNode.removeChild(this.element);
+		this.is_alive = false;
 	    }
-	}, 10).this.a.parentNode.removeChild(this.a)
+	}.bind(this),10);
     }
 }
 
 window.onload = function() {
-   
+
     document.getElementById("button1").onclick = function() {commentMove(commentCreate("comment1"));}
     document.getElementById("button2").onclick = function() {let comment2 = new Comment("comment2"); comment2.viewFromBody(); comment2.Move();}
     document.getElementById("button3").onclick = function() {commentMove(commentCreate("comment3"));}
