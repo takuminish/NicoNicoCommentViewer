@@ -50,7 +50,7 @@ window.onload = () => {
         commentArray.commentAliveCheck();
     },5000);
 
-    document.getElementById("コメント生成").onclick = () => {
+    document.getElementById("createComment").onclick = () => {
 	let comment2 = new Comment("comment2","testだよ");
 	commentArray.commentAdd(comment2);
 	comment2.viewFromBody();
