@@ -57,8 +57,6 @@ window.onload = () => {
 	comment2.viewFromBody();
 	comment2.Move();
     }
-    document.getElementById("button3").onclick = () => {commentManage.commentAliveCheck();}
-     
 }
 
 
