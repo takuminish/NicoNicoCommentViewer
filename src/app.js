@@ -11,7 +11,7 @@ function commentMove(comment) {
     const x = comment.offsetWidth;
 
     const time = setInterval( function() {
-	comment.style.left = dx + "px";
+	comment.style.left = `${dx}px`;
 	dx -= 1;
 	if ((x * -1) > dx) {
 	    clearInterval(time);
