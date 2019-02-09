@@ -32,7 +32,7 @@ class Comment {
     }
 
     Move() {
-	this.moveTime = setInterval( function() {
+	setInterval( () => {
 	    this.element.style.left = `${this.dx}px`;
 	    this.dx -= 1;
 	    if ((this.width * -1) > this.dx) {
@@ -40,7 +40,7 @@ class Comment {
 		this.element.parentNode.removeChild(this.element);
 		this.is_alive = false;
 	    }
-	}.bind(this),10);
+	}, 10);
     }
 }
 
