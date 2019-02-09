@@ -1,4 +1,4 @@
-class CommentManage {
+class CommentArray {
     constructor() {
         this.comments = [];
     }
@@ -45,15 +45,15 @@ class Comment {
 }
 
 window.onload = () => {
-    let commentManage = new CommentManage();
+    let commentArray = new CommentArray();
     setInterval( () => {
-        commentManage.commentAliveCheck();
+        commentArray.commentAliveCheck();
     },5000);
     
     document.getElementById("button1").onclick = () => {commentMove(commentCreate("comment1"));}
     document.getElementById("button2").onclick = () => {
 	let comment2 = new Comment("comment2");
-	commentManage.commentAdd(comment2);
+	commentArray.commentAdd(comment2);
 	comment2.viewFromBody();
 	comment2.Move();
     }
