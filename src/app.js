@@ -1,3 +1,17 @@
+class CommentManage {
+    constructor() {
+        this.comments = []
+    }
+
+    commentAdd(comment) {
+        this.comments.push(comment);
+    }
+
+    commentAliveCheck() {
+
+    }
+}
+
 class Comment {
     constructor(text) {
 	this.element = document.createElement("h1");
@@ -27,7 +41,8 @@ class Comment {
 }
 
 window.onload = function() {
-
+    let commentManage = new CommentManage();
+    
     document.getElementById("button1").onclick = function() {commentMove(commentCreate("comment1"));}
     document.getElementById("button2").onclick = function() {let comment2 = new Comment("comment2"); comment2.viewFromBody(); comment2.Move();}
     document.getElementById("button3").onclick = function() {commentMove(commentCreate("comment3"));}
