@@ -8,7 +8,11 @@ class CommentManage {
     }
 
     commentAliveCheck() {
-
+        this.comments.forEach( function( c, i, comments) {
+            if (c.is_alive === false) {
+		comments.splice(i, 1);
+	    }
+	});
     }
 }
 
@@ -44,8 +48,13 @@ window.onload = function() {
     let commentManage = new CommentManage();
     
     document.getElementById("button1").onclick = function() {commentMove(commentCreate("comment1"));}
-    document.getElementById("button2").onclick = function() {let comment2 = new Comment("comment2"); comment2.viewFromBody(); comment2.Move();}
-    document.getElementById("button3").onclick = function() {commentMove(commentCreate("comment3"));}
+    document.getElementById("button2").onclick = function() {
+	let comment2 = new Comment("comment2");
+	commentManage.commentAdd(comment2);
+	comment2.viewFromBody();
+	comment2.Move();
+    }
+    document.getElementById("button3").onclick = function() {commentManage.commentAliveCheck();}
      
 }
 
