@@ -1,17 +1,4 @@
-const express = require("express");
-const exp = express();
-
-console.log(__dirname)
-exp.set('views', __dirname + '/views');
-exp.set('view engine', "ejs")
-exp.use('/static', express.static(__dirname + '/public'));
-exp.get('/', (req,res) => {
-    res.render("index");
- //   res.send("index");
-});
-
-exp.listen(3000);
-
+import {server} from __dirname + "/server.js"
 const {app, BrowserWindow} = require('electron');
 
 let mainWindow;
