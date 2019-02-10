@@ -4,11 +4,14 @@
   "description": "niconico comment viewer",
   "main": "main.js",
   "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start" : "electron ./src",
-      "build-macOS": "electron-packager ./src FirstApp --platform=darwin --arch=x64 --overwrite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ./src",
+    "build-macOS": "electron-packager ./src FirstApp --platform=darwin --arch=x64 --overwrite",
     "build-windows": "electron-packager ./src FirstApp --platform=win32 --arch=x64 --overwrite"
   },
   "author": "takuminish",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }

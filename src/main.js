@@ -1,3 +1,14 @@
+const express = require("express");
+const exp = express();
+
+exp.set('views', __dirname + 'views');
+
+exp.get('/', (req,res) => {
+    res.render("index.html");
+});
+
+exp.listen(3000);
+
 const {app, BrowserWindow} = require('electron');
 
 let mainWindow;
@@ -9,7 +20,7 @@ function createWindow() {
 //	transparent: true,
 //	frame: false
     });
-    mainWindow.loadFile('index.html');
+    mainWindow.loadURL('http://localhost:3000/');
 
     mainWindow.on('closed', () => {
 	mainWindow = null;
