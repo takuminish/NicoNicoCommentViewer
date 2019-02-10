@@ -1,5 +1,5 @@
-import {server} from __dirname + "/server.js"
 const {app, BrowserWindow} = require('electron');
+const server = require("./server");
 
 let mainWindow;
 

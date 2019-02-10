@@ -8,7 +8,6 @@ server.use('/static', express.static(__dirname + '/public'));
 server.get('/', (req,res) => {
     res.render("index");
 });
-
 server.listen(3000);
 
-export const server; 
+module.exports = server; 
