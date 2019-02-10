@@ -1,10 +1,12 @@
 const express = require("express");
 const exp = express();
 
-exp.set('views', __dirname + 'views');
-
+console.log(__dirname)
+exp.set('views', __dirname + '/views');
+exp.set('view engine', "ejs")
 exp.get('/', (req,res) => {
-    res.render("index.html");
+    res.render("index");
+ //   res.send("index");
 });
 
 exp.listen(3000);
