@@ -4,6 +4,7 @@ const exp = express();
 console.log(__dirname)
 exp.set('views', __dirname + '/views');
 exp.set('view engine', "ejs")
+exp.use('/static', express.static(__dirname + '/public'));
 exp.get('/', (req,res) => {
     res.render("index");
  //   res.send("index");
