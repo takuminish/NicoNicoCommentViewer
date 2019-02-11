@@ -17,12 +17,13 @@ class CommentArray {
 }
 
 class Comment {
-    constructor(id,text, top) {
-	this.element = document.createElement("h1");
+    constructor(id,text, top, fontSize) {
+	this.element = document.createElement("span");
 	this.element.textContent = text;
         this.element.setAttribute("id",id);
         this.element.setAttribute("class","comment");
 	this.element.style.top = `${top}px`;
+	this.element.style.fontSize = `${fontSize}px`;
 	this.is_alive = true;
     }
 
@@ -62,7 +63,7 @@ window.onload = () => {
 	    console.log(body);
 	});
 	let top = Math.floor( Math.random() * (600 + 1 - 0) ) + 0 ;
-	let comment2 = new Comment("comment2","<script>alert(1);</script>",top);
+	let comment2 = new Comment("comment2","<script>alert(1);</script>",top, 30);
 	commentArray.commentAdd(comment2);
 	comment2.viewFromBody();
 	comment2.Move();
