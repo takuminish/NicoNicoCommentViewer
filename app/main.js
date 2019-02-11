@@ -1,5 +1,7 @@
 const {app, BrowserWindow} = require('electron');
 const server = require("./server");
+const path = require('path');
+const url = require('url');
 
 let mainWindow;
 
@@ -10,13 +12,13 @@ function createWindow() {
 //	transparent: true,
 //	frame: false
     });
-    mainWindow.loadURL('http://localhost:3000/');
-
+//    mainWindow.loadURL('http://localhost:3000/');
+    mainWindow.loadFile(__dirname + "/views/index.html");
     mainWindow.on('closed', () => {
 	mainWindow = null;
     });
 
-    mainWindow.webContents.openDevTools();
+   mainWindow.webContents.openDevTools();
 }
 
 app.on('ready', createWindow);
