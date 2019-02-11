@@ -52,6 +52,15 @@ window.onload = () => {
     },5000);
 
     document.getElementById("createComment").onclick = () => {
+	let request = require("request");
+        let options = {
+	    url : "http://weather.livedoor.com/forecast/webservice/json/v1?city=400040",
+	    method: "GET",
+	    json: true	   
+	}
+	request(options, (error, response, body) => {
+	    console.log(body);
+	});
 	let top = Math.floor( Math.random() * (600 + 1 - 0) ) + 0 ;
 	let comment2 = new Comment("comment2","<script>alert(1);</script>",top);
 	commentArray.commentAdd(comment2);
