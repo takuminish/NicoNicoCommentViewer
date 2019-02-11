@@ -73,7 +73,7 @@ window.onload = () => {
 	    });
 	});
         commentArray.commentAliveCheck();
-    },3000);	
+    },1000);	
 }
 
 
