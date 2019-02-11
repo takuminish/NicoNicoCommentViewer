@@ -50,10 +50,6 @@ class Comment {
 window.onload = () => {
     let commentArray = new CommentArray();
     setInterval( () => {
-        commentArray.commentAliveCheck();
-    },5000);
-
-    document.getElementById("createComment").onclick = () => {
 	let comment2;
 	let request = require("request");
         let options = {
@@ -68,9 +64,9 @@ window.onload = () => {
             comment2.viewFromBody();
             comment2.Move();
 	});
-	
-	
-    }
+        commentArray.commentAliveCheck();
+    },5000);	
 }
+
 
 
