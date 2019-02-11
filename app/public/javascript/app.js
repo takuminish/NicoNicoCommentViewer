@@ -53,19 +53,21 @@ window.onload = () => {
 	let comment2;
 	let request = require("request");
         let options = {
-	    url : "http://weather.livedoor.com/forecast/webservice/json/v1?city=400040",
+	    url : "http://localhost:3000/comments/show",
 	    method: "GET",
 	    json: true	   
 	}
 	request(options, (error, response, body) => {
-	    let top = Math.floor( Math.random() * (600 + 1 - 0) ) + 0 ;
-	    comment2 = new Comment("comment2",body["title"],top, 30, "red");
-	    commentArray.commentAdd(comment2);
-            comment2.viewFromBody();
-            comment2.Move();
+	    body.forEach( ( b, i, body) =>  {
+              let top = Math.floor( Math.random() * (600 + 1 - 0) ) + 0 ;
+	      comment2 = new Comment(`comment${b["id"]}`,b["text"],top, b["size"], b["color"]);
+	      commentArray.commentAdd(comment2);
+              comment2.viewFromBody();
+              comment2.Move();
+	    });
 	});
         commentArray.commentAliveCheck();
-    },5000);	
+    },3000);	
 }
 
 

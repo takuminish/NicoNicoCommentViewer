@@ -1,5 +1,5 @@
 const {app, BrowserWindow} = require('electron');
-const server = require("./server");
+//const server = require("./server");
 const path = require('path');
 const url = require('url');
 
