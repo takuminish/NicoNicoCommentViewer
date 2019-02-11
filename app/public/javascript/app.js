@@ -1,3 +1,4 @@
+require("dotenv").config();
 class CommentArray {
     constructor() {
         this.comments = [];
@@ -57,7 +58,7 @@ window.onload = () => {
 	    url : "http://localhost:3000/comments/show",
 	    method: "GET",
 	    qs: {
-		id: commentId
+		token: process.env.TOKEN
 	    },
 	    json: true	   
 	}
