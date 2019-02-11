@@ -49,21 +49,26 @@ class Comment {
 
 window.onload = () => {
     let commentArray = new CommentArray();
+    let commentId = 1;
     setInterval( () => {
 	let comment2;
 	let request = require("request");
         let options = {
 	    url : "http://localhost:3000/comments/show",
 	    method: "GET",
+	    qs: {
+		id: commentId
+	    },
 	    json: true	   
 	}
 	request(options, (error, response, body) => {
 	    body.forEach( ( b, i, body) =>  {
-              let top = Math.floor( Math.random() * (600 + 1 - 0) ) + 0 ;
-	      comment2 = new Comment(`comment${b["id"]}`,b["text"],top, b["size"], b["color"]);
-	      commentArray.commentAdd(comment2);
-              comment2.viewFromBody();
-              comment2.Move();
+                let top = Math.floor( Math.random() * (600 + 1 - 0) ) + 0 ;
+	        comment2 = new Comment(`comment${b["id"]}`,b["text"],top, b["size"], b["color"]);
+	        commentArray.commentAdd(comment2);
+                comment2.viewFromBody();
+	        comment2.Move();
+		commentId = b["id"];
 	    });
 	});
         commentArray.commentAliveCheck();
