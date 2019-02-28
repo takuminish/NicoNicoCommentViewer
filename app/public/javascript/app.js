@@ -31,7 +31,8 @@ class Comment {
 
     viewFromBody() {
         document.body.appendChild(this.element);
-	this.dx = this.element.offsetLeft;
+	//this.dx = this.element.offsetLeft;
+	this.dx = window.innerWidth;
         this.width = this.element.offsetWidth;
     }
 
@@ -64,7 +65,7 @@ window.onload = () => {
 	}
 	request(options, (error, response, body) => {
 	    body.forEach( ( b, i, body) =>  {
-                let top = Math.floor( Math.random() * (600 + 1 - 0) ) + 0 ;
+                let top = Math.floor( Math.random() * (window.innerHeight + 1 - 60) ) + 0 ;
 	        comment2 = new Comment(`comment${b["id"]}`,b["text"],top, b["size"], b["color"]);
 	        commentArray.commentAdd(comment2);
                 comment2.viewFromBody();
