@@ -45,7 +45,7 @@ class Comment {
 		this.element.parentNode.removeChild(this.element);
 		this.is_alive = false;
 	    }
-	}, 10);
+	}, 5);
     }
 }
 
