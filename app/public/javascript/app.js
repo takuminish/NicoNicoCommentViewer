@@ -56,7 +56,7 @@ window.onload = () => {
 	let comment2;
 	let request = require("request");
         let options = {
-	    url : "http://localhost:3000/comments/show",
+	    url : process.env.URL,
 	    method: "GET",
 	    qs: {
 		token: process.env.TOKEN
