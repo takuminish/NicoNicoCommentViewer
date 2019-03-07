@@ -7,18 +7,20 @@ let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-	width: 800,
-	height: 600,
-//	transparent: true,
-//	frame: false
+	width: 600,
+	height:800,
+	transparent: true,
+	alwaysOnTop: true
+//	frame: false,
+//        resizable: false,
     });
-//    mainWindow.loadURL('http://localhost:3000/');
+    //    mainWindow.loadURL('http://localhost:3000/');
+    //mainWindow.setIgnoreMouseEvents(true);
     mainWindow.loadFile(__dirname + "/views/index.html");
     mainWindow.on('closed', () => {
 	mainWindow = null;
     });
-
-   mainWindow.webContents.openDevTools();
+//   mainWindow.webContents.openDevTools();
 }
 
 app.on('ready', createWindow);
