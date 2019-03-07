@@ -7,10 +7,11 @@ let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-	width: 600,
-	height:800,
+	width: 800,
+	height:600,
 	transparent: true,
-	alwaysOnTop: true
+	alwaysOnTop: true,
+	 hasShadow: false
 //	frame: false,
 //        resizable: false,
     });
