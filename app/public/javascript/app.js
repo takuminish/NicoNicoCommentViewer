@@ -58,9 +58,6 @@ window.onload = () => {
         let options = {
 	    url : process.env.URL,
 	    method: "GET",
-	    qs: {
-		token: process.env.TOKEN
-	    },
 	    json: true	   
 	}
 	request(options, (error, response, body) => {
