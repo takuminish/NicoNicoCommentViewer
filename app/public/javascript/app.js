@@ -58,12 +58,15 @@ window.onload = () => {
         let options = {
 	    url : process.env.URL,
 	    method: "GET",
+	    qs: {
+		token: process.env.TOKEN
+	    },
 	    json: true	   
 	}
 	request(options, (error, response, body) => {
 	    body.forEach( ( b, i, body) =>  {
                 let top = Math.floor( Math.random() * (window.innerHeight + 1 - 60) ) + 0 ;
-	        comment2 = new Comment(`comment${b["id"]}`,b["text"],top, b["size"], b["color"]);
+	        comment2 = new Comment(`comment${b["id"]}`,b["text"],top, 50, "white");
 	        commentArray.commentAdd(comment2);
                 comment2.viewFromBody();
 	        comment2.Move();
