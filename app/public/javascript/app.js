@@ -31,15 +31,14 @@ class Comment {
 
     viewFromBody() {
         document.body.appendChild(this.element);
-	//this.dx = this.element.offsetLeft;
-	this.dx = window.innerWidth;
+	this.left = window.innerWidth;
         this.width = this.element.offsetWidth;
     }
 
     Move() {
 	this.moveTime = setInterval( () => {
-	    this.element.style.left = `${this.dx}px`;
-	    this.dx -= 1;
+	    this.element.style.left = `${this.left}px`;
+	    this.left -= 1;
 	    if ((this.width * -1) > this.dx) {
 		clearInterval(this.moveTime);
 		this.element.parentNode.removeChild(this.element);
