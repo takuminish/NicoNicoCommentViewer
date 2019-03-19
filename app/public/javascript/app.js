@@ -66,10 +66,10 @@ window.onload = () => {
 	request(options, (error, response, body) => {
 	    body.forEach( ( b, i, body) =>  {
                 let top = Math.floor( Math.random() * (window.innerHeight + 1 - 60) ) + 0 ;
-	        comment2 = new Comment(`comment${b["id"]}`,b["text"],top, 50, "white");
+	        comment = new Comment(`comment${b["id"]}`,b["text"],top, 50, "white");
 	        commentArray.commentAdd(comment2);
-                comment2.viewFromBody();
-	        comment2.Move();
+                comment.viewFromBody();
+	        comment.Move();
 		commentId = b["id"];
 	    });
 	});
