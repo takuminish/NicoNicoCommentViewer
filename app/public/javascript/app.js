@@ -11,6 +11,7 @@ class CommentArray {
     commentAliveCheck() {
         this.comments.forEach( ( c, i, comments) =>  {
             if (c.is_alive === false) {
+		comments[i]=null;
 		comments.splice(i, 1);
 	    }
 	});
